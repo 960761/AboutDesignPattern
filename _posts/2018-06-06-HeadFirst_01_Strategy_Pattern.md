@@ -58,7 +58,10 @@ Class Duck {
 使用时：  
 oneDuck.setFly(new FlyType2());  
 oneDuck.performFly();  
-这就可以在runtime时动态改变fly行为了。  
+这就可以在runtime时动态改变fly行为了。 
+
+### Demo  
+Check [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch01_StrategyPattern/src) for Duck Demo.
 
 ### 设计模式总结： 
 
