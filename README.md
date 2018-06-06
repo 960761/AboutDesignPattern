@@ -1,6 +1,6 @@
 ## Welcome to Design Pattern Garden
 
-You can use the [editor on GitHub](https://github.com/960761/AboutCSS/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+You can use the [editor on GitHub](https://github.com/960761/AboutDesignPattern/blob/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 ## Contents
 
