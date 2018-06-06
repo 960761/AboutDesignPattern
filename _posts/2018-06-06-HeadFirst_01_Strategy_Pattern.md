@@ -1,5 +1,7 @@
 # Strategy Pattern
 
+Author: Xin  
+Date: 2018-6-4   
 
 ### 问题： 
 一款已经成熟实现的鸭子游戏，在原先的基础上面需要添加 fly的行为，怎么做？  
