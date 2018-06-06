@@ -1,5 +1,7 @@
 # Observer Pattern
 
+Author: Xin  
+Date: 2018-6-4
 
 ### 问题
 有一个已经实现了的气象观测站app，现在想实时显示天气数据，怎么做？
