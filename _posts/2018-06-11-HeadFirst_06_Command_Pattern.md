@@ -33,7 +33,7 @@ control.setCommand(onCmd);//传入invoker
 control.runCmd(); 
 
 ### Demo
-Click[here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch06_CommandPattern/src) for two demos.
+Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch06_CommandPattern/src) for two demos.
 
 ### Command pattern:
 核心思想为：   
