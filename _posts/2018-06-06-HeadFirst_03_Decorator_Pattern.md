@@ -38,6 +38,8 @@ Public class Milk extends condimentDecorator {
 然后，再添加mocha，Beverage beer2 = new Mocha(beer1); // 此时被包装的为beer1  
 最后计算价格，调用beer2.cost();即可，  
 具体过程为，beer2.cost会调用被包装的beer1.cost()，beer1会去调用espresso的价格，最后得到espresso的价格后，返回到beer1，beer1附加上milk cost(20)，返回给beer2，beer2会附加上mocha cost(15)，最终得到返回值即为espresso + milk + mocha的总价格。
+### Demo
+Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch03_DecoratorPattern/src) for demo.
 ### 总结
 在JAVA自身的API中也有很多地方用到这种模式，比如JAVA I/O中的inputstream, fileInputStream。  
 其中input stream 为component，有很多种具体的基本读入操作比如fileinputstream, stringbufferInputstream等；FilterInputStream为decorator，有BufferedInputStream, DataInputStream等各种decorator实现各种定制化的读入操作。  
