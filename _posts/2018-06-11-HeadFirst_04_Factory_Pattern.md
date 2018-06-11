@@ -50,6 +50,9 @@ Public abstract Pizza createPizza(String type);
 ### Factory Method Pattern:
 Defines an interface(abstract method) for creating an object, but let subclasses decide which class to instantiate, Factory method lets a class defer instantiation to subclasses.  
 
+### Demo
+Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch04_FactoryPattern/src) for Demo.
+
 **模型类设计图：**    
 两大类组：  
 Product组，即上面的pizza组，要创建的东西；  
