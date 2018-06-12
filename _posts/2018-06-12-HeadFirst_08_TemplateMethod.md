@@ -34,6 +34,8 @@ Abstract void addCondiment();
 ### Template Method Pattern
 Defines the skeleton of an algorithm in a method, deferring some steps to subclasses.   
 Template method let subclasses redefine certain steps of an algorithm without changing the algorithm’s structure。
+### Demo
+Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch08_TemplateMethodPattern/src) to see the demo code.
 ### 模型类设计图：
 只需要一个虚类即可：  
 Abstract class AbstractClass {  
