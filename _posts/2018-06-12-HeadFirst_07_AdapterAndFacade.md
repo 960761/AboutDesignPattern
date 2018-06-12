@@ -31,7 +31,7 @@ least knowledge- talk only to your immediate friend，尽量减少类相互间�
 其中一条：  
 not to call methods on objects that were returned from calling other methods, but we can call methods of instance variable and function paremeters.  
 ### 对比
-以下三种模式都使用到class composition，但是侧重点各不相同：
+以下三种模式都使用到class composition，但是侧重点各不相同：  
 **Adapter** wrap class to change its interface;  
 **Façade** wrap several objects to simplify the interface;  
 **Decorator** wrap object to add new behaviors。   
