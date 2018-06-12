@@ -1,5 +1,6 @@
+## Aapter and Facade pattern
 
-### Adapter:
+### Adapter pattern:
 可以使用 电源转换器 来理解这种模式。  
 Converts the interface of a class into another interface that the client expect. Adapters let classes work together that couldn’t otherwise because of incompatiable interface。  
 主要目的是为了两种接口不兼容的class可以兼容；
