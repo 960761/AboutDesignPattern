@@ -25,7 +25,9 @@ Provides  a unified interface to a set of interfaces in a subsystem。
 ### 简单示例：
 一个家庭影院涉及到好多类，比如灯光，声响，荧幕等；  
 需要watch movie时，分别要调用light.on(), sound.on(), screen.on()等，会与很多个对象打交道，这时候就可以使用Façade，  
-定义public class façade {} 将涉及到的object都集合到façade里面，并将watch movie所需要的操作集合进一个函数watechMovie()里面。  
+定义public class façade {} 将涉及到的object都集合到façade里面，并将watch movie所需要的操作集合进一个函数watechMovie()里面。 
+### Demo
+Headfirst给出的关于adapter 和 facade的demo都非常简单，这里就没有给出代码。
 ### OO原则：  
 least knowledge- talk only to your immediate friend，尽量减少类相互间的依赖和耦合。  
 其中一条：  
