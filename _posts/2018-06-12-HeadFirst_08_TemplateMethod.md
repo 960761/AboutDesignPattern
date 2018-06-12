@@ -61,7 +61,7 @@ JAVA array中的sort()就是使用了这一模式。JFrame中的paint()函数则
 ### 对比
 **Strategy pattern, template and factory**：
 Strategy 和template两者很相似，都是将具体的行为delegate给其余的对象，但是实际上还是有很多不同的地方的：  
-第一，	Strategy将整个algorithm的实现都delegate给了其他对象，template只是将整个algorithm中的某些steps代理给其他对象；  
+第一，	Strategy将整个algorithm的实现都delegate给了其他对象，template只将整个algorithm中某些steps代理给其他对象；  
 第二，	Strategy 使用的是composition；template使用的是Inherence；  
 第三，	Strategy侧重的是运行期间动态改变行为的灵活性；template侧重的是在不改变整体框架的前提下灵活实现某些步骤，并最大化利用code reuse；  
 第四，	Factory method可以认为是template method 的一种特殊情况。  
