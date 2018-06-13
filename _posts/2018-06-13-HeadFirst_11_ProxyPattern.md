@@ -88,7 +88,9 @@ Public String sayHi() throws RemoteException;
 最后，运行，  
 首先在server 端开启terminal运行rmiregistry  
 然后在server 端运行rebind所在代码，这里就是myRemoteImpl（因为这个错误调试很长时间）  
-然后在client端正常编译运行即可。  
+然后在client端正常编译运行即可。 
+### Simple RMI demo
+Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch11_ProxyPattern/src/simpleRMI) for simple RMI code.
 ### game machine的具体实现：
 Server 端的service已有，即为gameMachine何一组具体的state class;  
 需要编写remote和remoteImpl，这里创建 GameMachineRemote；其中的GameMachineRemoteImpl就在 GameMachine class的基础上面修改而成；  
