@@ -84,6 +84,7 @@ Public String sayHi() throws RemoteException;
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}
+
 最关键的是Naming.lookup的使用，用来查找所需要的proxy，其中的参数为server service所在的位置，这里为3420 IP地址。  
 最后，运行，  
 首先在server 端开启terminal运行rmiregistry  
