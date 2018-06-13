@@ -22,7 +22,7 @@ Abstract Menu{
 	Void createIterator();  
 }  
 涉及到两组类，一组是实现了menu得各种具体的menu；一组是实现myIterator的针对各种menu的iteratorz，这两组对象组，通过printMenu()联系到一起并完成所需操作。
-###Demo
+### Demo
 Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch09_IteratorAndComposite/src/Iterator) for demo code.
 ### Iterator Pattern：
 Provides a way to access the element of a collection of objects sequentially without exposing its underlying representation。    
