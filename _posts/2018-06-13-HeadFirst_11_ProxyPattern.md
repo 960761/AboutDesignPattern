@@ -96,7 +96,10 @@ Server 端的service已有，即为gameMachine何一组具体的state class;
 需要编写remote和remoteImpl，这里创建 GameMachineRemote；其中的GameMachineRemoteImpl就在 GameMachine class的基础上面修改而成；  
 然后编写GameMachineTest将Naming.rebind()放在这里执行；  
 在client端创建GameMonitor，使其包含GameMachineRemote reference，并调用其get函数获取所需状态；  
-最后使用GameMonitorTestDrive进行测试。  
+最后使用GameMonitorTestDrive进行测试。
+
+### Game Machine monitor Demo
+Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch11_ProxyPattern/src/GameMonitor) for Game machine monitor demo code.
 ### Proxy Pattern
 Provides a surrogate(代孕) or placeholder for another object to control access to it。  
 
