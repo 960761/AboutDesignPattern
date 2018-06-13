@@ -54,7 +54,8 @@ Public String sayHi() throws RemoteException;
 然后要在implementation class所在的目录运行  rmic myRemoteImpl  
 就会在当前目录下生成stub, skeleton，默认命名为 xx_Stub,  xx_Skeleton，实际上只会生成stub没有skeleton。  
 
-**4.到这里为止生成service已经成功，还需要进行注册**，这里需要两个操作
+**4.注册service**  
+到这里为止生成service已经成功，还需要进行注册,这里需要两个操作
 首先，另外打开一个terminal，运行rmiregistry；  
 然后，还需要进行rebind，rebind的代码可以自己选择放在哪里，这里将其放在implementation上面，因此最后的implementation就变成了以下：  
   Public class myRemoteImpl extends UnicastRemoteObject implements myRemote {  
