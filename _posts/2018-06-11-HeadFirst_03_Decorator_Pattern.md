@@ -25,12 +25,12 @@ Concrete component :  Espresso extends beverage, Decaf extends beverage等具体
 Concrete decorator: Milk extends condimentDecorator, Mocha extends condimentDecorator等具体的配料，  
 注意concrete decorator类的实现：  
 
-Public class Milk extends condimentDecorator {  
-	  Beverage beer; //包含对被包装对象的引用  
-	  Public Milk(Beverage br){this.beer = br;}  
-	Public String getDesc(){ return   beer.getDesc +”, Milk” ; }  
-	Public double cost(){ return .20+beer.cost() ;}    
-  }  
+	Public class Milk extends condimentDecorator {  
+		  Beverage beer; //包含对被包装对象的引用  
+		  Public Milk(Beverage br){this.beer = br;}  
+		Public String getDesc(){ return   beer.getDesc +”, Milk” ; }  
+		Public double cost(){ return .20+beer.cost() ;}    
+	  }  
 ### 举例实现：  
 计算一种加有 milk, mocha的espresso的价格：  
 首先，创建espresso :  Beverage beer = new Espresso();  
