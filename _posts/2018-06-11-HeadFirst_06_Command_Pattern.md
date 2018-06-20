@@ -8,29 +8,32 @@
 从上面可以看到，服务员和后厨是互相解耦的，任何一个order 只要实现了orderUp()方法都可以被服务员调用(orderup, make a request)，触发实际的操作(prepare order)  
 
 **以开灯为例来简单实现提出的遥控器问题：**  
-首先定义统一接口（类似于orderUp()）command：  
-Public interface Command { public void execute(); } 
+首先定义统一接口（类似于orderUp()）command：
+
+    Public interface Command { public void execute(); } 
 
 然后实现具体命令：  
-Public class lightOnCommand implements Command{  
-Light light;  
-Public lightOnCommand(Light light){this.light = light; }//将具体的receiver 传给command  
-Public void execute(){ light.on(); }// 执行具体的操作  
-} 
+
+    Public class lightOnCommand implements Command{  
+      Light light;  
+      Public lightOnCommand(Light light){this.light = light; }//将具体的receiver 传给command  
+      Public void execute(){ light.on(); }// 执行具体的操作  
+    } 
 
 最后使用此command:  
-Public class control(){  
-Command slot;  
-SetCommand(Command cmd){ this.slot = cmd;}//这里将具体的command传给control  
-Public void runCmd(){ slot. Execute(); }  
-}
+
+    Public class control(){  
+      Command slot;  
+      SetCommand(Command cmd){ this.slot = cmd;}//这里将具体的command传给control  
+      Public void runCmd(){ slot. Execute(); }  
+    }
 
 运行：  
-Control control;  
-Light light = new Light();  
-lightOnCommand  onCmd = new lightOnCommand(light); //传入具体的receiver and action，创建具体command  
-control.setCommand(onCmd);//传入invoker  
-control.runCmd(); 
+    Control control;  
+    Light light = new Light();  
+    lightOnCommand  onCmd = new lightOnCommand(light); //传入具体的receiver and action，创建具体command  
+    control.setCommand(onCmd);//传入invoker  
+    control.runCmd(); 
 
 ### Demo
 Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch06_CommandPattern/src) for two demos.
