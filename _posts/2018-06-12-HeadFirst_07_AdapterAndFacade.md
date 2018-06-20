@@ -8,12 +8,13 @@ Converts the interface of a class into another interface that the client expect.
 Public  interface Duck { void quack(); void fly(); }  
 Public interface Turkey { void gobble(); void fly(); }   
 现在client想使用duck，但是我们只有turkey，这时就需要一个adapter  
-Public class TurkeyAdapter implements Duck {  
-	Turkey turkey;  
-	Public TurkeyAdatpter(Turkey tk){ this.turkey = tk; }  
-	Void quack(){ turkey.goggle(); }  
-	Void fly(){turkey.fly(); }  
-}  
+
+	Public class TurkeyAdapter implements Duck {  
+		Turkey turkey;  
+		Public TurkeyAdatpter(Turkey tk){ this.turkey = tk; }  
+		Void quack(){ turkey.goggle(); }  
+		Void fly(){turkey.fly(); }  
+	}  
 ### 模型类架构图：
 涉及到两个：target(duck)，即需要的类； adaptee(turkey)，现有的类，需要被转换的类  
 设计adapter:  使其实现target，并包含adaptee，使用adaptee的方法实现target的方法。  
