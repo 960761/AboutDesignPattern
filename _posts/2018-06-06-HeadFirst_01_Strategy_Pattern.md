@@ -19,19 +19,19 @@ Date: 2018-6-4
 最终方案的类设计结构为：  
 
 将Fly单独拿出来定义为  
-interface FlyBehavior { 
+	interface FlyBehavior { 
 
-	  public void fly();    
-}
+		  public void fly();    
+	}
 
 具体的飞行种类定义为实现它的类：  
-Class FlyType1 implements FlyBehavior{       
-	Public void fly(){   concrete operation  }  
-}  
+	Class FlyType1 implements FlyBehavior{       
+		Public void fly(){   concrete operation  }  
+	}  
 
-Class FlyType2 implements FlyBehavior{  
-	Public void fly(){  concreate operation  }  
-} 
+	Class FlyType2 implements FlyBehavior{  
+		Public void fly(){  concreate operation  }  
+	} 
 
 
 ### 如何使用：  
