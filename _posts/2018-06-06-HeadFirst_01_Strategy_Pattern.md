@@ -32,6 +32,9 @@ Date: 2018-6-4
 Class FlyType2 implements FlyBehavior{  
 	Public void fly(){  concreate operation  }  
 } `
+`Class FlyType1 implements FlyBehavior{       
+	Public void fly(){   concrete operation  }  
+} `
 
 ### 如何使用：  
 
