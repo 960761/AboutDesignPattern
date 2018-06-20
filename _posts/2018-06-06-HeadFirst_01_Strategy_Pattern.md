@@ -25,13 +25,13 @@ Date: 2018-6-4
 }`
 
 具体的飞行种类定义为实现它的类：  
-`Class FlyType1 implements FlyBehavior{       
+```Class FlyType1 implements FlyBehavior{       
 	Public void fly(){   concrete operation  }  
 }  
 
 Class FlyType2 implements FlyBehavior{  
 	Public void fly(){  concreate operation  }  
-} `
+} ```
 
 
 ### 如何使用：  
