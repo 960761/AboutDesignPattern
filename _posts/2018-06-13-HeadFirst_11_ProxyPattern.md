@@ -37,6 +37,7 @@ JAVA内置支持RMI，其中client helper即stub，  service helper即skeleton�
 	Public interface myRemote extends Remote{  
 		Public String sayHi() throws RemoteException;  
 	}  
+
 三点要注意，  
 第一，必须extends Remote；第二，必须throw RemoteException；第三，里面的method涉及到的参数或返回值必须为primitive or serializable。
 
@@ -47,6 +48,7 @@ JAVA内置支持RMI，其中client helper即stub，  service helper即skeleton�
 		Public String sayHi(){ return “server say, hi” ; }  
 		Public myRemoteImpl () throws RemoteException {}  
 	  }  
+
 注意两点，  
 第一，一定要extend UnicastRemoteObject；第二，因为UnicastRemoteObject会抛出异常，所以这里也要定义一个空的构建函数，目的就是为了将父类抛出的异常继续throw。
 
