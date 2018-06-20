@@ -6,7 +6,9 @@
 	Void insert(){  
 		If(state == xx){xxx}  
 		If(state == xx){xxx}  
-	}  
+	}   
+	
+	
 当新增加一种状态时，需要做很大的代码改动，而且以上根本没有用到OO思想，  
 
 **改进如下：**  
@@ -15,12 +17,16 @@
 首先，设计 state 接口  
 
 	Interface state { insertQ(); ejectQ(); }  
+	
+	
 然后，每种具体的状态implement state interface，并具体实现四种行为下的状态转移；  
 最后，定义GameMachine类，在类中包含各种具体状态的reference，并一直指示current state，  
 因为最终client action都是对game machine操作的，所以这这个类中也要定义四种action method，但是具体的实现则是delegate  to current state来实现。  
 比如GameMachine中，
 
 	void intertQ(){ current.insertQ(); }  
+	
+	
 改进之后，不仅符合OO原则，而且容易扩展，如果增加一种状态，只需创建一个新的state class即可。  
 
 ### Demo
