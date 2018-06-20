@@ -11,43 +11,46 @@ Observer模式非常好理解，可以参照预订报纸来进行理解，之前
 defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.  
 体现的OO原则： **Loose Coupling 松耦合**
 ### 具体实现：
-先定义两个接口：发布者Subject 和 订购者（观察者）Observer  
-Public interface Subject {  
-	registerObserver(Observer o);  
-removeObserver(Observer o);  
-notifyObservers();  
-}  
-Public  interface Observer {  
-	Update(Subject sub);  
-}  
-**如何使用：**  
-Public class weatherData implements Subject {  
-	  private ArrayList observers;//用来存储自己的observers  
-  public WeatherData(){observers = new ArrayList();}    
-	//implement interface method  
-	public void registerObserver(Observer o){  observers.add(o);  }  
-	public void removeObserver(Observer o){  
-		int i = observers.indexOf(o);  
-		if(i&gt;=0){observers.remove(i);}  
-	}  
-	public void notifyObservers(){  
-		for(int i=0;i&lt;observers.size();i++){  
-			Observer ob = (Observer)observers.get(i);  
-			ob.update(this);  
-		}  
-	}  
-             //custom methods  
-	dataChanged(){  
+先定义两个接口：发布者Subject 和 订购者（观察者）Observer 
+
+	Public interface Subject {  
+		registerObserver(Observer o);  
+		removeObserver(Observer o);  
 		notifyObservers();  
-}  
-}  
-Public class update implements Observer {  
-	Private Subject subject;  
-	Public void update(Subject sub){  
-		subject = sub;  
-		//use data to do sth here  
-}  
-} 
+	}  
+	Public  interface Observer {  
+		Update(Subject sub);  
+	}  
+**如何使用：**  
+
+	Public class weatherData implements Subject {  
+		  private ArrayList observers;//用来存储自己的observers  
+		public WeatherData(){observers = new ArrayList();}    
+		//implement interface method  
+		public void registerObserver(Observer o){  observers.add(o);  }  
+		public void removeObserver(Observer o){  
+			int i = observers.indexOf(o);  
+			if(i&gt;=0){observers.remove(i);}  
+		}  
+		public void notifyObservers(){  
+			for(int i=0;i&lt;observers.size();i++){  
+				Observer ob = (Observer)observers.get(i);  
+				ob.update(this);  
+			}  
+		}  
+		     //custom methods  
+		dataChanged(){  
+			notifyObservers();  
+	        }  
+	}  
+	
+	Public class update implements Observer {  
+		Private Subject subject;  
+		Public void update(Subject sub){  
+			subject = sub;  
+			//use data to do sth here  
+	        }  
+	} 
 
 ### Demo
 Check [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch02_ObserverPattern) for Weather station demo.
