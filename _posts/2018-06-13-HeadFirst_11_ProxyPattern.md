@@ -32,10 +32,11 @@ JAVA内置支持RMI，其中client helper即stub，  service helper即skeleton�
 首先，将3420上面的java类变成remote service，
 
 **1.Make a remote interface**
-这个interface作用是 defines the remote methods you want client  to call.  
-Public interface myRemote extends Remote{  
-Public String sayHi() throws RemoteException;  
-}  
+这个interface作用是 defines the remote methods you want client  to call. 
+
+	Public interface myRemote extends Remote{  
+		Public String sayHi() throws RemoteException;  
+	}  
 三点要注意，  
 第一，必须extends Remote；第二，必须throw RemoteException；第三，里面的method涉及到的参数或返回值必须为primitive or serializable。
 
