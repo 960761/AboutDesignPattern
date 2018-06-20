@@ -12,18 +12,24 @@
 	Interface myIterator{   
 		Boolean hasNext();  
 		Object next();  
-	}  
+	}    
+	
+	
 然后，针对两种menu创建各自的iterator实现以上接口，在这两个具体的iterator类中具体实现 循环获取元素 的操作； 
 
 	lunchMenuIterator implements myIterator(){xxx}  
-	dinnerMenuIterator implements myIterator(){xxx}  
+	dinnerMenuIterator implements myIterator(){xxx}   
+	
+	
 最后，需要在两种menu中添加函数用来提供各自的iterator，添加createIterator()函数。  
 至此，已经解决问题，但是可以看到createIterator()在两个menu中是共有的部分，所以可以再次将此函数拿出来封装成一个接口，  
 这样做不仅减少了代码冗余，而且因为共同实现此接口使得两种menu利用多态可以互换。
 
 	Abstract Menu{   
 		Void createIterator();  
-	}  
+	}    
+	
+	
 涉及到两组类，一组是实现了menu得各种具体的menu；一组是实现myIterator的针对各种menu的iteratorz，这两组对象组，通过printMenu()联系到一起并完成所需操作。
 ### Demo
 Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch09_IteratorAndComposite/src/Iterator) for demo code.
@@ -51,7 +57,9 @@ Allows you to compose objects into tree structures to represent part-whole hiera
 	Add(component);  
 	Remove(component);  
 	getChild(int);  
-	}  
+	}    
+	
+	
 然后，针对composite and individual node实现两种类：  
 
 	Class leaf {   
@@ -62,7 +70,9 @@ Allows you to compose objects into tree structures to represent part-whole hiera
 		Remove(component);  
 		getChild();  
 		operation();  
-	}  
+	}    
+	
+	
 我们可以看到，实现的这两个类对父类中的函数是有选择的进行Override的，因为有些操作对leaf而言是无意义的，而有的操作可能对composite是无意义的，所以选择性进行override。这也是父类component设计为虚类而非接口的原因，因为在父类中要对所有函数都进行default implementation。  
 
 **针对关于menu的具体问题，类设计如下：**  
@@ -77,12 +87,14 @@ Allows you to compose objects into tree structures to represent part-whole hiera
 		add(component){xx}  
 		remove(component){xx} 
 		getChild(int){xx}  
-	}  
+	}    
+	
 
 然后创建两个子类： 
 
 	Class MenuItem{ xxx }  
-	Class Menu { xxx }  
+	Class Menu { xxx }    
+	
 最关键的地方在于以上三个类中所有method的具体实现。  
 将Iterator + composite两种模式结合起来：  
 需要在menuCompoent父类中添加createIterator()方法；  
