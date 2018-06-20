@@ -31,6 +31,8 @@ Concrete decorator: Milk extends condimentDecorator, Mocha extends condimentDeco
 		Public String getDesc(){ return   beer.getDesc +”, Milk” ; }  
 		Public double cost(){ return .20+beer.cost() ;}    
 	  }  
+	  
+	  
 ### 举例实现：  
 计算一种加有 milk, mocha的espresso的价格：  
 首先，创建espresso :  Beverage beer = new Espresso();  
