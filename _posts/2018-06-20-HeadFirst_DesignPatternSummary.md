@@ -55,6 +55,7 @@ A class should have only one reason to change.
 
 
 
+### 常用设计模式列表比较
 
 |名字|定义|示例 |实现|备注|
 |-|-|-|-|-|
