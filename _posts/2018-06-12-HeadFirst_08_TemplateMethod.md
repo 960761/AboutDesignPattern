@@ -1,35 +1,38 @@
 ### 问题的提出及解决：
 
-准备一杯咖啡的类定义为：   
-Public  class coffee {  
-	boilWater(){xx};  
-	brewCoffee(){xx};  
-	pourInCup(){xx};  
-	addMilk(){xx};  
-}  
+准备一杯咖啡的类定义为： 
+
+	Public  class coffee {  
+		boilWater(){xx};  
+		brewCoffee(){xx};  
+		pourInCup(){xx};  
+		addMilk(){xx};  
+	}  
 
 准备一杯茶的类定义为：  
-Public  class tea {  
-	boilWater(){xx};  
-	brewTea(){xx};  
-	pourInCup(){xx};  
-	addLemon(){xx};  
-}    
+
+	Public  class tea {  
+		boilWater(){xx};  
+		brewTea(){xx};  
+		pourInCup(){xx};  
+		addLemon(){xx};  
+	}    
 从上面可以看出，两种类的活动模式都是一样的，只是其中某些具体步骤不相同，以上设计会有很多重复代码，  
 
 改进如下：  
-Public abstract class CoffeeAndTea{  
-	Public void prepare(){  
-		boilWater();  
-		brew();  
-		pourInCup();  
-		addCondiment();  
-}  
-Void boilWater(){xx};  
-Void pourInCup(){xx};  
-Abstract void brew();  
-Abstract void addCondiment();  
-}  
+
+	Public abstract class CoffeeAndTea{  
+		Public void prepare(){  
+			boilWater();  
+			brew();  
+			pourInCup();  
+			addCondiment();  
+		}  
+		Void boilWater(){xx};  
+		Void pourInCup(){xx};  
+		Abstract void brew();  
+		Abstract void addCondiment();  
+	}  
 然后具体到coffee and tea的时候，只需扩展以上类并具体实现虚方法即可，既保证了行为的灵活性，又最大程度利用了code reuse。  
 ### Template Method Pattern
 Defines the skeleton of an algorithm in a method, deferring some steps to subclasses.   
@@ -37,17 +40,18 @@ Template method let subclasses redefine certain steps of an algorithm without ch
 ### Demo
 Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch08_TemplateMethodPattern/src) to see the demo code.
 ### 模型类设计图：
-只需要一个虚类即可：  
-Abstract class AbstractClass {  
-	Final void templateMethod(){  
-		primitiveOperation1();  
-		primitiveOperation2();  
-		concreteOperation();  
-}  
-Abstract void primitiveOperation1();  
-Abstract void primitiveOperation2();  
-Void concreteOperation(){xx};  
-}  
+只需要一个虚类即可： 
+
+	Abstract class AbstractClass {  
+		Final void templateMethod(){  
+			primitiveOperation1();  
+			primitiveOperation2();  
+			concreteOperation();  
+		}  
+		Abstract void primitiveOperation1();  
+		Abstract void primitiveOperation2();  
+		Void concreteOperation(){xx};  
+	}  
 具体的类拓展该虚类时负责实现具体的某些子函数。  
 ### Hook 函数：
 A hook is a method that is declared in the abstract class, but only give an empty or default implementation。  
