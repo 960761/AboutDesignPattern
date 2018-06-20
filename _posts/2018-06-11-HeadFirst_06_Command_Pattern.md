@@ -28,12 +28,13 @@
       Public void runCmd(){ slot. Execute(); }  
     }
 
-运行：  
-    Control control;  
-    Light light = new Light();  
-    lightOnCommand  onCmd = new lightOnCommand(light); //传入具体的receiver and action，创建具体command  
-    control.setCommand(onCmd);//传入invoker  
-    control.runCmd(); 
+运行： 
+
+        Control control;  
+        Light light = new Light();  
+        lightOnCommand  onCmd = new lightOnCommand(light); //传入具体的receiver and action，创建具体command  
+        control.setCommand(onCmd);//传入invoker  
+        control.runCmd(); 
 
 ### Demo
 Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadFirst_DesignPattern/ch06_CommandPattern/src) for two demos.
