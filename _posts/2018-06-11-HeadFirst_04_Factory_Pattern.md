@@ -22,7 +22,8 @@
 			Else if(type == “type2”){ pizza = new Pizza2(); }  
 			Return pizza;  
 	        }  
-	}  
+	}   
+	
 原来的类设计改为：  
 
 	Public  class pizzastore {  
@@ -32,7 +33,9 @@
 			Pizza pizza = fac.createPizza(type);  
 			Return pizza;  
 	        }  
-	}   
+	}    
+	
+	
 这时有两个类，pizzaStore, pizzaFactory，两者为组合关系，这样改进后，type改变时，只需改变pizzaFactory即可。  
 如果我们需要两种pizza，只需要创建两个pizzaFactory即可，new pizzaFactory1(), new pizzaFactory2()，但是还要在 pizzaStore类 里面进行改动，所以还需要进一步改进。  
 
@@ -44,7 +47,9 @@
 			Return pizza;  
 	        }    
 	        Public abstract Pizza createPizza(String type);    
-	}      
+	}  
+	
+	
 将pizzaFactory类改为createPizza method，但是定义为abstract类型，需要子类去具体实现。  
 这样当需要不同类型的pizza时，对pizzaStore进行扩展即可，扩展时在子类中对具体的pizza type通过createPizza进行创建，这时就不需要去改动pizzaStore的类源码了。  
 这里涉及到两大类组：pizzaStore类组和pizza类组。两大类组之间为平行关系。它们通过createPizza method进行连接。  
