@@ -39,15 +39,17 @@ Date: 2018-6-4
 
 *父类的设计：*  
 
-将flyBehavior这种行为包含在duck类中，作为其一个成员，并定义一个调用fly的方法；  
-	Class Duck {  
-		FlyBehavior fb;  
-		Public void performFly(){ fb.fly(); }  
-	}  
+将flyBehavior这种行为包含在duck类中，作为其一个成员，并定义一个调用fly的方法； 
+
+Class Duck {  
+	FlyBehavior fb;  
+	Public void performFly(){ fb.fly(); }  
+}  
 
 *子类的设计：*  
 
-子类中需要初始化FlyBehavior这个变量，只有初始化后才可以调用具体的方法  
+子类中需要初始化FlyBehavior这个变量，只有初始化后才可以调用具体的方法
+
 	Class oneDuck extends Duck {  
 		Public oneDuck() { fb = new FlyType1(); } //构造函数中进行初始化  
 	}  
