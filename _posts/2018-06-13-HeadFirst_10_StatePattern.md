@@ -1,22 +1,26 @@
 ### 问题：
 眼下有一款游戏机Gamball，有四种状态，四种行为，一种状态到另一种状态通过一种action进行转换，现在 已知其状态转移图，需要构建实现代码。
 ### 解决方法：
-最开始想到的是最原始的过程式编程，把每种action作为中心，判断可能的当前状态和转换到的状态，  
-Void insert(){  
-	If(state == xx){xxx}  
-	If(state == xx){xxx}  
-}  
+最开始想到的是最原始的过程式编程，把每种action作为中心，判断可能的当前状态和转换到的状态， 
+
+	Void insert(){  
+		If(state == xx){xxx}  
+		If(state == xx){xxx}  
+	}  
 当新增加一种状态时，需要做很大的代码改动，而且以上根本没有用到OO思想，  
 
 **改进如下：**  
 我们以每种状态为中心，当前状态在四种行为下的反应为具体实现，让每种状态自己管理自己的状态转移。  
 
 首先，设计 state 接口  
-Interface state { insertQ(); ejectQ(); }  
+
+	Interface state { insertQ(); ejectQ(); }  
 然后，每种具体的状态implement state interface，并具体实现四种行为下的状态转移；  
 最后，定义GameMachine类，在类中包含各种具体状态的reference，并一直指示current state，  
 因为最终client action都是对game machine操作的，所以这这个类中也要定义四种action method，但是具体的实现则是delegate  to current state来实现。  
-比如GameMachine中，void intertQ(){ current.insertQ(); }  
+比如GameMachine中，
+
+	void intertQ(){ current.insertQ(); }  
 改进之后，不仅符合OO原则，而且容易扩展，如果增加一种状态，只需创建一个新的state class即可。  
 
 ### Demo
