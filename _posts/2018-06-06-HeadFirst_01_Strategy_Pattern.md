@@ -24,7 +24,8 @@ Date: 2018-6-4
 		  public void fly();    
 	}
 
-具体的飞行种类定义为实现它的类：  
+具体的飞行种类定义为实现它的类：
+
 	Class FlyType1 implements FlyBehavior{       
 		Public void fly(){   concrete operation  }  
 	}  
@@ -39,28 +40,28 @@ Date: 2018-6-4
 *父类的设计：*  
 
 将flyBehavior这种行为包含在duck类中，作为其一个成员，并定义一个调用fly的方法；  
-Class Duck {  
-	FlyBehavior fb;  
-	Public void performFly(){ fb.fly(); }  
-}  
+	Class Duck {  
+		FlyBehavior fb;  
+		Public void performFly(){ fb.fly(); }  
+	}  
 
 *子类的设计：*  
 
 子类中需要初始化FlyBehavior这个变量，只有初始化后才可以调用具体的方法  
-Class oneDuck extends Duck {  
-	Public oneDuck() { fb = new FlyType1(); } //构造函数中进行初始化  
-}  
+	Class oneDuck extends Duck {  
+		Public oneDuck() { fb = new FlyType1(); } //构造函数中进行初始化  
+	}  
 
 使用时，直接 oneDuck.performFly()；就可以了，这个时候就是调用的flyType1这种实现。  
 
 *父类的改进：*  
 以上还只能在子类的构造过程中选择具体的飞行实现方法，在父类中添加setFly方法：  
 
-Class Duck {  
-	FlyBehavior fb;  
-	setFly(FlyBehavior fbb){fb = fbb; }  
-	Public void performFly(){ fb.fly(); }  
-}  
+	Class Duck {  
+		FlyBehavior fb;  
+		setFly(FlyBehavior fbb){fb = fbb; }  
+		Public void performFly(){ fb.fly(); }  
+	}  
 
 使用时：  
 oneDuck.setFly(new FlyType2());  
