@@ -20,7 +20,8 @@ defines a one-to-many dependency between objects so that when one object changes
 	}  
 	Public  interface Observer {  
 		Update(Subject sub);  
-	}  
+	}   
+	
 **如何使用：**  
 
 	Public class weatherData implements Subject {  
