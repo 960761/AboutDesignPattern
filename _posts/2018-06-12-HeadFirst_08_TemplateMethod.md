@@ -16,7 +16,9 @@
 		brewTea(){xx};  
 		pourInCup(){xx};  
 		addLemon(){xx};  
-	}    
+	}   
+	
+	
 从上面可以看出，两种类的活动模式都是一样的，只是其中某些具体步骤不相同，以上设计会有很多重复代码，  
 
 改进如下：  
@@ -32,7 +34,9 @@
 		Void pourInCup(){xx};  
 		Abstract void brew();  
 		Abstract void addCondiment();  
-	}  
+	}    
+	
+	
 然后具体到coffee and tea的时候，只需扩展以上类并具体实现虚方法即可，既保证了行为的灵活性，又最大程度利用了code reuse。  
 ### Template Method Pattern
 Defines the skeleton of an algorithm in a method, deferring some steps to subclasses.   
@@ -51,7 +55,9 @@ Click [here](https://github.com/960761/AboutDesignPattern/tree/master/code/HeadF
 		Abstract void primitiveOperation1();  
 		Abstract void primitiveOperation2();  
 		Void concreteOperation(){xx};  
-	}  
+	}    
+	
+	
 具体的类拓展该虚类时负责实现具体的某些子函数。  
 ### Hook 函数：
 A hook is a method that is declared in the abstract class, but only give an empty or default implementation。  
