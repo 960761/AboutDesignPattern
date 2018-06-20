@@ -40,11 +40,12 @@ Public String sayHi() throws RemoteException;
 第一，必须extends Remote；第二，必须throw RemoteException；第三，里面的method涉及到的参数或返回值必须为primitive or serializable。
 
 **2.Make a remote implementation**
-也即实现上面定义的remote interface  
-  Public class myRemoteImpl extends UnicastRemoteObject implements myRemote {  
-	Public String sayHi(){ return “server say, hi” ; }  
-	Public myRemoteImpl () throws RemoteException {}  
-}  
+也即实现上面定义的remote interface 
+
+	  Public class myRemoteImpl extends UnicastRemoteObject implements myRemote {  
+		Public String sayHi(){ return “server say, hi” ; }  
+		Public myRemoteImpl () throws RemoteException {}  
+	  }  
 注意两点，  
 第一，一定要extend UnicastRemoteObject；第二，因为UnicastRemoteObject会抛出异常，所以这里也要定义一个空的构建函数，目的就是为了将父类抛出的异常继续throw。
 
@@ -57,25 +58,27 @@ Public String sayHi() throws RemoteException;
 **4.注册service**  
 到这里为止生成service已经成功，还需要进行注册,这里需要两个操作
 首先，另外打开一个terminal，运行rmiregistry；  
-然后，还需要进行rebind，rebind的代码可以自己选择放在哪里，这里将其放在implementation上面，因此最后的implementation就变成了以下：  
-  Public class myRemoteImpl extends UnicastRemoteObject implements myRemote {  
-	Public String sayHi(){ return “server say, hi” ; }  
-	Public myRemoteImpl () throws RemoteException {}  
-	public static void main(String[] args){  
-		try{  
-			MyRemote service = new MyRemoteImpl();  
-			Naming.rebind(&quot;//localhost/RemoteHi&quot;, service);  
-		}catch(Exception ex){  
-			ex.printStackTrace();  
+然后，还需要进行rebind，rebind的代码可以自己选择放在哪里，这里将其放在implementation上面，因此最后的implementation就变成了以下：
+
+	Public class myRemoteImpl extends UnicastRemoteObject implements myRemote {  
+		Public String sayHi(){ return “server say, hi” ; }  
+		Public myRemoteImpl () throws RemoteException {}  
+		public static void main(String[] args){  
+			try{  
+				MyRemote service = new MyRemoteImpl();  
+				Naming.rebind(&quot;//localhost/RemoteHi&quot;, service);  
+			}catch(Exception ex){  
+				ex.printStackTrace();  
+			}  
 		}  
-	}  
-}    
+	}    
 
 至此就准备成功了，可以使用了。  
 **在client端使用时，步骤如下：**
 
 首先，将server端的myRemote.class,  myRemoteImpl_Stub.class拷贝到client端正确目录下（client端代码所在处）  
-然后，书写调用myRemote的代码  
+然后，书写调用myRemote的代码 
+
 		try{  
 			MyRemote service = (MyRemote)Naming.lookup(&quot;rmi://10.1.114.201/RemoteHi&quot;);  
 			
